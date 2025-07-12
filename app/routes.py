@@ -1,9 +1,7 @@
 from flask import Blueprint, render_template
-from .forms import UserForm
-from .models import User, db
 
 main = Blueprint('main', __name__)
 
-@main.route('/', methods=['GET', 'POST'])
+@main.route("/")
 def home():
-    return render_template("home.html", form=UserForm(), users=User.query.all())
+    return render_template("home.html")
